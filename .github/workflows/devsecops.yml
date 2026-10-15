@@ -31,6 +31,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run unit tests with coverage
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: |
           pytest tests/ -v \
             --tb=short \
